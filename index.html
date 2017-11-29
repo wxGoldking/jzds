@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>节奏大师</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <audio preload="auto" src="audio/result_score.wav" id="music"></audio>
+    <audio preload="auto" src="audio/game_start.mp3" id="start_voice"></audio>
+    <audio preload="auto" src="audio/watingplayer.mp3" loop="loop" id="watingmusic"></audio>
+    <audio preload="auto" src="audio/result_bgm.mp3" loop="loop" id="result_bgm"></audio>
+    <audio src="audio/gameover.mp3" id="gameover_voice"></audio>
+    <audio src="audio/result_score.wav" id="result_score"></audio>
+    <audio src="audio/music_select_01.wav" id="music_select"></audio>
+    <audio src="audio/result_reward.wav" id="result_reward"></audio>
+    <div id="begin"></div>
+    <canvas id="mycanvas">
+    </canvas>
+    <script src="js/lib/simpleInheritance.js"></script>
+    <script src="js/lib/underscore-min.js"></script>
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Scene.js"></script>
+    <script src="js/Background.js"></script>
+    <script src="js/Butt.js"></script>
+    <script src="js/Touch.js"></script>
+    <script src="js/Life.js"></script>
+    <script src="js/Score.js"></script>
+    <script src="js/Buling.js"></script>
+    <script src="js/Pingjia.js"></script>
+    <script src="js/Lianji.js"></script>
+    <script src="js/Loading.js"></script>
+    <script src="js/Select.js"></script>
+    <script src="js/Pause.js"></script>
+    <script src="js/Death.js"></script>
+    <script src="js/End.js"></script>
+    <script src="js/json.js"></script>
+    <script type="text/javascript">
+        set();
+         window.onresize=set;
+         function set(){
+            var windowWidth=document.documentElement.clientWidth;
+            document.documentElement.style.fontSize=windowWidth/540*100+"px";
+         }
+        HTMLAudioElement.prototype.stop = function()
+        {
+            this.pause();//立即停止播放
+            this.currentTime = 0.0;//播放进度拉回0%
+        }
+            var game=new Game();
+    </script>
+</body>
+</html>
